@@ -17,7 +17,6 @@ export enum TableColumnNames {
 export const mockToDoListData =
     [
         {
-            "id": "1",
             "task": "Write a report",
             "description": "Analyze the quarterly sales data and create a detailed report.",
             "category": "Work",
@@ -26,7 +25,6 @@ export const mockToDoListData =
             "fulfillment": "Completed"
         },
         {
-            "id": "2",
             "task": "Grocery Shopping",
             "description": "Buy milk, eggs, bread, and fruits.",
             "category": "Personal",
@@ -35,7 +33,6 @@ export const mockToDoListData =
             "fulfillment": "Pending"
         },
         {
-            "id": "3",
             "task": "Learn React",
             "description": "Complete the React tutorial and build a simple app.",
             "category": "Learning",

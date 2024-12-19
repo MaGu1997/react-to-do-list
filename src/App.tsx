@@ -1,18 +1,15 @@
 // import { useState } from "react";
-import "./App.css";
+import { StrictMode } from "react";
 import ActionsBar from "./components/actionsBar/actions-bar";
 import TableComponent from "./components/TableComponent/table-component";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  // const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <ActionsBar />
-        <TableComponent />
-      </div>
-    </>
+    <StrictMode>
+      <ActionsBar />
+      <TableComponent />
+    </StrictMode>
   );
 }
 

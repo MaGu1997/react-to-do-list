@@ -1,20 +1,27 @@
-import { ButtonGroup, ButtonToolbar } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { ActiveToDoButton } from "./ActiveToDoButton";
-import { AddAnewToDoButton } from "./AddAnewToDoButton.1";
+import { AddAnewToDoButton } from "./AddAnewToDoButton";
 import { AllToDoButton } from "./AllToDoButton";
 import { CompletedToDoButton } from "./CompletedToDoButton";
+import Container from "react-bootstrap/Container";
 
 export default function ActionsBar() {
   return (
-    <ButtonToolbar>
-      <ButtonGroup className="me-2" aria-label="First group">
-        <AddAnewToDoButton />
-      </ButtonGroup>
-      <ButtonGroup className="me-3" aria-label="Second group">
-        <AllToDoButton />
-        <ActiveToDoButton />
-        <CompletedToDoButton />
-      </ButtonGroup>
-    </ButtonToolbar>
+    <Container>
+      <Row>
+        <Col xs="3">
+          <AddAnewToDoButton />
+        </Col>
+        <Col xs="3">
+          <AllToDoButton />
+        </Col>
+        <Col xs="3">
+          <ActiveToDoButton />
+        </Col>
+        <Col xs="3">
+          <CompletedToDoButton />
+        </Col>
+      </Row>
+    </Container>
   );
 }
