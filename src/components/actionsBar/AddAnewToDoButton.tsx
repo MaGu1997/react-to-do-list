@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ButtonNames } from "../constants";
-import { Button } from "react-bootstrap";
+import { Button, Col } from "react-bootstrap";
 
 export function AddAnewToDoButton() {
   const [count, setCount] = useState(0);
@@ -10,8 +10,10 @@ export function AddAnewToDoButton() {
   };
 
   return (
-    <Button variant="secondary" size="lg" active onClick={handleClick}>
-      {ButtonNames.addanewtodo}
-    </Button>
+    <Col xs="6">
+      <Button variant="primary" active onClick={handleClick}>
+        {ButtonNames.addanewtodo}
+      </Button>
+    </Col>
   );
 }
