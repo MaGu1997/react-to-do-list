@@ -1,21 +1,34 @@
 // import { useState } from "react";
-import { TableColumnNames } from "../constants";
-import { Container } from "react-bootstrap";
-
+import { Table } from "react-bootstrap";
+import { mockToDoListData, TableColumnNames } from "../constants";
+import TableRowComponent from "./TableRowComponent";
 function ColumnName({ titleofcolumn }: { titleofcolumn: string }) {
-  return <th data-qa-id={`column-${titleofcolumn}`}>{titleofcolumn}</th>;
+  return (
+    <th scope="col" data-qa-id={`column-${titleofcolumn}`}>
+      {titleofcolumn}
+    </th>
+  );
 }
 
 export default function TableComponent() {
   return (
-    <table>
-      <tbody>
+    <Table>
+      <thead>
         <tr>
           {Object.values(TableColumnNames).map((columnName, index) => (
             <ColumnName key={index} titleofcolumn={columnName} />
           ))}
         </tr>
+      </thead>
+      <tbody>
+        {mockToDoListData.map((value, index) => (
+          <TableRowComponent key={index} itemId={index} dataValue={value} />
+        ))}
       </tbody>
-    </table>
+      <tfoot>
+        <th scope="row">Total albums</th>
+        <td>{mockToDoListData.length}</td>
+      </tfoot>
+    </Table>
   );
 }
