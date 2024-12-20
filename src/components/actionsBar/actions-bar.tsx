@@ -1,11 +1,8 @@
-import { Row, Tab, Tabs } from "react-bootstrap";
-import { ActiveToDoButton } from "./ActiveToDoButton";
-import { AddAnewToDoButton } from "./AddAnewToDoButton";
-import { AllToDoButton } from "./AllToDoButton";
-import { CompletedToDoButton } from "./CompletedToDoButton";
-import Container from "react-bootstrap/Container";
-import { useState } from "react";
+import { Container, Row, Tab, Tabs } from "react-bootstrap";
 import { ButtonNames } from "../constants";
+import { AddAnewToDoButton } from "./AddAnewToDoButton";
+import { useContext, useState } from "react";
+import { TabsContext } from "../../App";
 
 export default function ActionsBar() {
   const [key, setKey] = useState("allTodo");
@@ -14,6 +11,7 @@ export default function ActionsBar() {
       setKey(eventKey);
     }
   }
+  const selectedTab = useContext(TabsContext);
   return (
     <Container>
       <Row>
